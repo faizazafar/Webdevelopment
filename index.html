@@ -2,1061 +2,385 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/bb00379865.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"> -->
+  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+  <link href="ihover.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-    <style>
-        #header {
-            background-color: #5179ce;
-            padding: 6px;
-        }
-
-        #navbar {
-
-
-            padding-left: 30px;
-
-
-
-        }
-
-        .size {
-
-            width: 35px;
-            height: 35px;
-            padding: 8px;
-            cursor: pointer;
-
-        }
-
-        h3 {
-
-            font-size: 15px;
-            display: inline;
-            text-align: center;
-            color: white;
-
-            padding-left: 180px;
-            margin-right: 50px;
-
-        }
-
-        .nav.nav-pills {
-            display: inline-flex;
-            padding-left: 350px;
-
-
-        }
-
-        .nav-link.active {
-
-            border-style: hidden;
-
-        }
-
-        #pic {
-
-            width: 200px;
-            height: 60px;
-            margin-left: 50px;
-            /* padding-left: 150px; */
-        }
-
-        .sizes {
-
-            height: 500px;
-            width: 1380px;
-        }
-
-        .tcontainer {
-            width: 100%;
-            overflow: hidden;
-
-            /* Hide scroll bar */
-        }
-
-        /* MIDDLE CONTAINER */
-        .ticker-wrap {
-            width: 100%;
-            padding-left: 100%;
-            /* Push contents to right side of screen */
-            background-color: #5179ce;
-            color: white;
-        }
-
-        /* INNER CONTAINER */
-        @keyframes ticker {
-            0% {
-                transform: translate3d(0, 0, 0);
-            }
-
-            100% {
-                transform: translate3d(-100%, 0, 0);
-            }
-        }
-
-        .ticker-move {
-            /* Basically move items from right side of screen to left in infinite loop */
-            display: inline-block;
-            white-space: nowrap;
-            padding-right: 100%;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-            animation-name: ticker;
-            animation-duration: 30s;
-        }
-
-        .ticker-move:hover {
-            animation-play-state: paused;
-            /* Pause scroll on mouse hover */
-        }
-
-        /* ITEMS */
-        .ticker-item {
-            display: inline-block;
-            /* Lay items in a horizontal line */
-            padding: 0 2rem;
-        }
-
-        .space {
-
-            padding: 10px;
-        }
-
-        .label1 {
-
-            text-align: center;
-            color: darkblue;
-            font-size: 35px;
-            font-weight: bold;
-            padding-left: 600px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        }
-
-        .label2 {
-
-            color: green;
-            font-size: 35px;
-            font-weight: bold;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-
-        }
-
-        .sizeofcentre {
-            height: 40px;
-            width: 40px;
-
-            /* padding: 10px; */
-        }
-
-        .label3 {
-
-            color: green;
-            font-weight: bolder;
-        }
-
-        .label4 {
-
-            color: green;
-            font-weight: bolder
-        }
-
-        .section3 {
-            background-color: #5179ce;
-
-            padding: 50px;
-
-        }
-
-        h2 {
-            color: rgb(58, 122, 182);
-            ;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            font-weight: bolder;
-            padding-left: 580px;
-        }
-
-        span {
-            color: rgb(11, 122, 11);
-        }
-
-        h5 {
-
-            color: rgb(58, 122, 182);
-            text-align: center;
-            padding-top: 15px;
-            font-weight: bolder;
-        }
-
-        .tickerv-wrap {
-
-            box-sizing: content-box;
-            height: 200px;
-            /* Take note of this */
-            overflow: hidden;
-            /* Hide scrollbars */
-            padding: 20px;
-        }
-
-        /* TICKER ANIMATION */
-        @keyframes tickerv {
-            0% {
-                margin-top: 0;
-            }
-
-            /* Quite literally -ve height of wrapper */
-            25% {
-                margin-top: -26px;
-            }
-
-            /* 1 X 25 px */
-            50% {
-                margin-top: -52px;
-            }
-
-            /* 2 X 25 px */
-            75% {
-                margin-top: -78px;
-            }
-
-            /* 3 X 25 px */
-            100% {
-                margin-top: 0;
-            }
-
-            /* Back to first line */
-        }
-
-        .tickerv-wrap ul {
-            padding: 0;
-            margin: 0;
-            list-style-type: none;
-            animation-name: tickerv;
-            /* Loop through items */
-            animation-duration: 10s;
-            animation-iteration-count: infinite;
-            animation-timing-function: cubic-bezier(1, 0, .5, 0);
-        }
-
-        .tickerv-wrap ul:hover {
-            /* Pause on mouse hover */
-            animation-play-state: paused;
-        }
-
-        /* ITEMS */
-        .tickerv-wrap ul li {
-            font-size: 12px;
-            line-height: 26px
-                /* Same as wrapper height */
-        }
-
-        #image {
-            width: 230px;
-            height: 150px;
-            cursor: pointer;
-            /* opacity: 1;
-            backface-visibility: hidden;
-            transition: .5s ease;
-            display: block;
-  */
-        }
-
-        /*
-
-        .container {
-            position: relative;
-
-        }
-
-        .container:hover #image {
-            opacity: 0.3;
-        }
-
-        .container:hover .middle {
-            opacity: 1;
-        }
-        .ovetlay-fade{
-            position: relative;
-            box-sizing: border-box;
-        height: 280px;
-        width: 220px;
-        overflow: hidden;
-        float: left;
-        margin: 10px;
-        }
-        .overlay-fade:hover div {
-	opacity: 1;
-    transition: all 0.2s ease-in;
-        }
-        .overlay-fade div {
-	position: absolute;
-    box-sizing: border-box;
-    top: 0;
-    background-color: rgba(255,255,255,0.3);
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: all 0.2s ease-in;
-} */
-/* .overlay-fade a {
-	box-sizing: border-box;
-	text-decoration: none;
-    display: block;
-    color: #eeeeee;
-    background-color: #1c5bb1;
-    text-align: center;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 130px;
-    height: 50px;
-    line-height: 50px;
-    position: absolute;
-    font-size: 12px;
-    font-weight: bold;
-} */
-
-
-        /* .image {
-
-            width: 230px;
-            height: 150px;
-            opacity: 1;
-    display: block;
-        transition: .5s ease;
-    backface-visibility: hidden;
-}
-
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.container:hover .image {
-  opacity: 0.3;
-}
-
-.container:hover .middle {
-  opacity: 1;
-}
-
-.text {
-  background-color: #4CAF50;
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
-} */
-        #copyright {
-            background-color: rgb(58, 122, 182);
-            padding: 10px;
-            color: white;
-        }
-
-
-        .td-table {
-
-            padding: 30px;
-        }
-
-        /* .row::after {
-  content: "";
-  clear: both;
-  display: table;
-} */
- @media screen and (max-width: 500px) {
-  #image {
-    width: 100%;
-  }
-} 
-
-        /* .fixed-nav-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 9999;
-            width: 100%;
-            height: 50px;
-        } */
-
-
-        /* .carousel-item.active{
-
-                height: 200px;
-            } */
-    </style>
 </head>
 
-<body style="margin: 0; background-color: rgb(243, 247, 250);">
-    <!-- <div class="container"> -->
-    <header id="header">
-        <nav id="navbar">
+<body>
 
+  <header>
 
-            <span>
+    <div class="container-fluid p-0 m-0">
+      <nav class=" navbar navbar-expand-md navbar-light ">
+        <a class="navbar-brand ml-2" href="#">
+          <!-- <img src="./pics/cosmetic-beauty-logo-design-vector-28158268008.jpg" width="80" height="60" class="d-inline-block align-top mt-2 ml-2 " alt="" loading="lazy"> -->
+          <span>S</span>hazz <span>S</span>alon
+          <img src="./pics/beauty1-removebg-preview.png" width="100" height="60"
+            class="d-inline-block align-top mt-2 mr-1  " alt="" class="img-fluid width 100% height auto" loading="lazy">
 
-                <img class="size"
-                    src="https://cdn2.iconfinder.com/data/icons/social-icon-3/512/social_style_3_facebook-512.png" />
-                <span style=>
-                    <img class="size"
-                        src="https://cdn1.iconfinder.com/data/icons/social-media-icon-1/112/twitter-512.png">
-                </span>
-                <span>
-                    <img class="size"
-                        src="https://i.pinimg.com/originals/ca/5b/4d/ca5b4df7080ab2cb871cae11baa791b1.png">
-                </span>
-                <span>
-                    <img class="size"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQe0lKH3p1holyqGZHEyjQxWvpQVryUmIM1ExT-qbAaeQnFB2R6&usqp=CAU">
-                </span>
-                <span>
-                    <img class="size"
-                        src="https://cdn3.iconfinder.com/data/icons/social-media-chamfered-corner/154/whatsapp-512.png">
-                </span>
-
-
-                <span>
-                    <h3>Millions of people's life has changed, millions more awaiting your donation</h3>
-                </span>
-
-                <span></span>
-
-                <span>
-
-                    <button style="color : darkgreen"> UK Donar</button>
-                    <button style="color: darkgreen"> Donate Now</button>
-                    <button style="color: darkgreen;"> SMIT Results</button>
-
-
-                </span>
-        </nav>
-    </header>
-
-    <!-- <div style="background-color: rgb(250, 250, 250); padding-left: 60px;"  > 
-          position: fixed;top: 0;width: 100%; margin-top: 35px;"-->
-
-    <nav style="background-color: rgb(243, 247, 250);">
-
-        <img id="pic" src="./saylani-logo1.png">
-
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Home</a>
-
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                    aria-expanded="false">About</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Introduction</a>
-                    <a class="dropdown-item" href="#">Chairman Message</a>
-                    <a class="dropdown-item" href="#">saylani Annual Support</a>
-
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                    aria-expanded="false">Saylani Services</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Education</a>
-                    <a class="dropdown-item" href="#">Medical</a>
-                    <a class="dropdown-item" href="#">saylani Annual Support</a>
-
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                    aria-expanded="false">Future Project</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">saylani university</a>
-                    <a class="dropdown-item" href="#">saylani city</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Media</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">News</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                    aria-expanded="false">Donation</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">bank details</a>
-                    <a class="dropdown-item" href="#">saqda</a>
-                    <a class="dropdown-item" href="#">aqiqa</a>
-
-                </div>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- <div style="position: relative;">
-<img src="./pictures/saylani444.jpg">
-</div> -->
-
-    <!-- <div class="main"> -->
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="./saylani444.jpg" class="sizes" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="./saylani55.jpg" class="sizes" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="./saylani22.jpg" class="sizes" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="./blood.jpg" class="sizes" class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
 
-    <div class="space">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarMenu"
+          aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
 
-    </div>
-
-    <div class="tcontainer" style="padding-left: 60px; padding-right: 60px;">
-        <div class="ticker-wrap">
-            <div class="ticker-move">
-                <div class="ticker-item"> <span style="color:lime;">(News-1 Dated:15-06-2019) </span> PIAIC Next Phase
-                    Admission in Islamabad And
-                    Faisalabad" <span style="color: blue;">More Details</span></div>
-                <div class="ticker-item"> <span style="color: lime;">(News-2 Dated:15-05-2019) </span> Welfare Announced
-                    "Donation Application" </span>
-                </div>
-                <div class="ticker-item"> <span style="color: lime;">(News-3 Dated:07-05-2019)</span>Alhamdulillah
-                    Saylani Organized 200+ Locations For
-                    Iftar And Sehri In This Holy Month <span style="color: blue;">More Details</span> </div>
-                <div class="ticker-item"><span style="color: lime;">(News-4 Dated:08-03-2019)</span>Saylani Welfare
-                    Distributing Ration & Clothes to
-                    affected people of Balochistan.<span style="color: blue;">More Details</span></div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
-
-    <h2>INTRO<span>DUCTION</span></h2>
-
-    <div style="display: inline-flex; padding-left: 640px; display: inline-block;"></div>
-    <label class="label3">_____</label>
-    <img class="sizeofcentre" src="./favicon.png">
-    <label class="label3">_____</label>
-
-    </div>
-
-    <div class="row">
-
-
-        <div style=" text-align: justify;margin-left: 158px; margin-right: 158px; display: block;">
-            <p>
-                Established in May 1999 by famous spiritual and religious scholar Maulana Bashir Ahmed Farooqui, Saylani
-                Welfare International Trust was built on the fundamentals of breaking the cycle of poverty, alleviating
-                the
-                financial troubles of the poor, giving people a chance to live a dignified life and spreading happiness.
-
-            </p>
-            <br>
-            <p>
-                We are an organization that believes in lighting up the lives of underprivileged people across the
-                world. We
-                endeavor to provide the best quality services in areas including food, education, medical and social
-                welfare
-                free of cost to people living in the dark. With over 60 different sectors, we feed thousands of hungry
-                people each day, hundreds more are given the hope of life through medical health care, many are educated
-                to
-                become leaders of tomorrow and several are given the opportunity to stand on their feet financially.
-            </p>
-            <p>
-                Today, we are proud to say that our physical presence extends throughout Pakistan with a vast network of
-                125
-                branches operating in major cities including Karachi, Lahore, Islamabad, Rawalpindi, Hyderabad and
-                Faisalabad. Apart from Pakistan, we have overseas offices in the UK, USA and UAE as well. Our worldwide
-                branches are operating under the guidance of a team of over 2,000 working professionals who help almost
-                125,000 people on a daily basis.
-            </p>
-            <p>
-                We strongly believe that a little help goes a long way and our work would not be possible without the
-                generous support of our valuable donors. Our local and international donors have graciously lent us a
-                hand
-                by supporting our causes and enabling us to serve the needs of people in need.
-            </p>
-        </div>
-
-    </div>
-
-    <br>
-    <br>
-
-    <div class="section3">
-
-        <!-- <div  style="display: inline-flex;">
-        <span><h1 style="color: white;"> 125,000</h1>
-            <p style="color: white;">Daily Dastarkhuwan (Monthly)<p>
-        </span>
-
-        <span><h1 style="color: white;"> 7,500</h1>
-            <p style="color: white;">Family Adoption (Monthly)<p>
-        </span>
-        <span><h1 style="color: white;"> 7,500</h1>
-            <p style="color: white;">Family Adoption (Monthly)<p>
-        </span>
-        </div> -->
-
-        <!-- <table style="text-align: center; margin-left: auto; margin-right: auto;">
-            <tr>
-                <td class="td-table">
-                    <div>
-                        
-                        <img src="./plate.png" width="70px" height="70px">
-                        <h1 style="color: white;"> 125,000</h1>
-            <p style="color: white;">Daily Dastarkhuwan (Monthly)<p>
-
-                    </div>
-                </td>
-                <td class="td-table">
-                    <div>
-                        <img src="./business (1).png" width="70px" height="70px">
-                        <h1 style="color: white;"> 7,500</h1>
-                        <p style="color: white;">Family Adoption (Monthly)<p>
-                    </div>
-                </td>
-                <td class="td-table" style="padding-left: 30px;">
-                    <div>
-                        <img src="./medical-tool.png" width="70px" height="70px">
-                        <h1 style="color: white;"> 43,749</h1>
-                        <p style="color: white;">Medical (Monthly)<p>
-                    </div>
-                </td>
-                <td class="td-table">
-                    <div>
-                        <img src="./book.png" width="70px" height="70px">
-                        <h1 style="color: white;"> 180,000</h1>
-                        <p style="color: white;">Education (Monthly)<p>
-                    </div>
-                </td>
-            </tr>
-        </table> -->
-
-        <div class="row" style="text-align: center;">
-            <div class=" col-sm-3">
-                <img src="./plate.png" width="70px" height="70px">
-                <h1 style="color: white;"> 125,000</h1>
-                <p style="color: white;">Daily Dastarkhuwan (Monthly)<p>
-
-            </div>
-            <div class=" col-sm-3">
-
-                <img src="./business (1).png" width="70px" height="70px">
-                <h1 style="color: white;"> 7,500</h1>
-                <p style="color: white;">Family Adoption (Monthly)<p>
-            </div>
-            <div class=" col-sm-3">
-
-                <div>
-                    <img src="./medical-tool.png" width="70px" height="70px">
-                    <h1 style="color: white;"> 43,749</h1>
-                    <p style="color: white;">Medical (Monthly)<p>
-                </div>
-
-
-            </div>
-            <div class=" col-sm-3">
-                <div>
-                    <img src="./book.png" width="70px" height="70px">
-                    <h1 style="color: white;"> 180,000</h1>
-                    <p style="color: white;">Education (Monthly)<p>
-                </div>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-    <br>
-    <br>
-    <div>
-        <h2 style="padding-left: 500px;">WHAT WE<span> ARE DOING?</span></h2>
-    </div>
-    <div style="display: inline-flex; padding-left: 620px;"> </div>
-    <label class="label3">_____</label>
-    <img class="sizeofcentre" src="./favicon.png">
-    <label class="label3">_____</label>
-
-
-
-    <!-- <div class="card" style="width: 18rem;">
-        <img  style="width: 50px; height: 50px;"src="./pictures/coins.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div> -->
-
-    <!-- <table style="text-align: center; 
-    margin-left: auto; margin-right: auto; ">
-        <tr>
-            <td>
-            <div>
-                
-                <img src="./pictures/coins.png" alt="">
-     
-            </div>
-            </td>
-            <td>
-                <div>
-                   
-            
-                </div>
-            </td>
-            <td>
-                <div>
-                   
-            
-                </div>
-            </td>
-        </tr>
-    </table> -->
-    <br>
-    <br>
-
-    <div class="row" style="margin: 0px;">
-        <div class="col-sm-4">
-            <div class="card" style="width: 22em; height: 10em; margin-left: 50px;">
-                <div class="card-body">
-                    <img src="./business.png" width="70px" height="70px" style="margin-left :120px; cursor: pointer;">
-                    <h5>ONLINE SADQAH</h5>
-
-                </div>
-                <!-- <h3 style="color: black; text-align: center; ">ONLINE SADQAH</h3> -->
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card" style="width: 22em; height: 10em; margin-left: 50px; ">
-                <div class="card-body">
-                    <img src="./business (1).png" width="70px" height="70px"
-                        style="margin-left :120px;cursor: pointer;">
-                    <h5>WELFARE</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card" style="width: 22em; height: 10em;margin-left: 50px; ">
-                <div class="card-body">
-                    <img src="./medical-tool.png" width="70px" height="70px"
-                        style="margin-left :120px; cursor: pointer;">
-                    <h5>MEDICAL</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
-    <br>
-    <br>
-
-
-    <div class="row" style="margin: 0px;">
-        <div class="col-sm-4">
-            <div class="card" style="width: 22em; height: 10em; margin-left: 50px;">
-                <div class="card-body">
-                    <img src="./plate.png" width="70px" height="70px" style="margin-left :120px; cursor: pointer;">
-                    <h5>DASTARKHUWAN</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card" style="width: 22em; height: 10em; margin-left: 50px; ">
-                <div class="card-body">
-                    <img src="./furniture-and-household.png" width="70px" height="70px"
-                        style="margin-left :120px; cursor: pointer;">
-                    <h5>RO PLANT</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card" style="width: 22em; height: 10em;margin-left: 50px; ">
-                <div class="card-body">
-                    <img src="./book.png" width="70px" height="70px" style="margin-left :120px; cursor: pointer;">
-                    <h5>EDUCATION</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
-    <br>
-
-    <section style="  margin: 0px; background-color: white; padding : 120px">
-
-        <div style="margin: -50px; width: 1100px;">
-            <h4 style=" margin-top: -2px;color:rgb(58, 122, 182);  display: inline-block"> MISSION AND UPCOMING PROJECTS
-            </h4>
-            <h4 style="color:rgb(58, 122, 182) ; float: right ; display: inline-flex;">UPCOMING EVENTS</h4>
-
-            <div class="progress" style="height: 2px; width: 400px;">
-                <div class="progress-bar" role="progressbar" style="width: 20%; background-color: green; "
-                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <div class="progress" style="height: 2px; width: 240px; margin-left: 880px;">
-                <div class="progress-bar" role="progressbar" style="width: 20%;  background-color: green;"
-                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-
-            <br>
-            <div class="container" style="margin-left: -18px;">
-                <div class="row">
-                    <div class="col-4">
-                        <div class="p-3 border bg-light">
-                            <img src="./icons8-liver-48.png" width="30px" height="30px">
-                            <h5 style="display: inline-flex; padding-left: 30px; font-weight:normal;
-                    font-family: sans-serif">HEPATITIS</h5>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="p-3 border bg-light">
-                            <img src="./icons8-dog-house-48.png" width="30px" height="30px">
-                            <h5 style="display: inline-flex; padding-left: 30px; font-weight:normal;
-                font-family: sans-serif">HOUSING SOCIETY</h5>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-4">
-                        <div class="p-3 border bg-light">
-                            <img src="./icons8-laptop-48.png" width="30px" height="30px">
-                            <h5 style="display: inline-flex; padding-left: 30px; font-weight: normal;
-                font-family: sans-serif">IT LITERACY </h5>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="p-3 border bg-light">
-                            <img src="./icons8-desert-landscape-48.png" width="30px" height="30px">
-                            <h5 style="display: inline-flex; padding-left: 30px; font-weight:normal;
-                font-family: sans-serif">THARKARPAR</h5>
-                        </div>
-                    </div>
-
-                    <div class="tickerv-wrap" style="display: inline-block;margin-left: 900px; margin-top: -200px;">
-                        <ul>
-                            <li>Saylani Welfare Distributing Ration & Clothes to affected people of Balochistan.</li>
-                            <li>PIAIC Entrance Exam Merit Ranking List Announced.</li>
-                            <li>Dr Jamil Ahmed (Additional Inspector General of Police) & Atiqmir Visit Saylani Welfare
-                                International Trust, Saylani Mass I.T. Training </li>
-                            <li>President of Pakistan (Dr. Arif Alvi) Visited Saylani Welfare International Trust
-                                HeadOffice Karachi.</li>
-                        </ul>
-                    </div>
-                </div>
-                <br>
-                <br>
-                <div>
-                    <h2 style="padding-left: 500px;">IMAGE<span> GALLERY</span></h2>
-                </div>
-                <div style="display: inline-flex; padding-left: 560px;"> </div>
-                <label class="label3">_____</label>
-                <img class="sizeofcentre" src="./favicon.png">
-                <label class="label3">_____</label>
-                <br>
-                <br>
-
- 
-                 <!-- <div class="row" style="text-align: center; margin-left: auto; margin-right: auto;">
-            <div class=" column"  style="float: left; width: 20%; padding: 10px; margin-left: 0px;">
-                <a href="./details.html">
-                    <img id="image" src="rashan2.jpg" alt="">
-                </a>
-
-            </div>
-            <div class="col"style="float: left; width: 20%; padding: 10px;" >
-                
-                <a href="./details.html">
-                    <img id="image" src="food.jpg" alt="">
-                </a>
-
-            </div>
-            <div class="col"style="float: left; width: 20%; padding: 10px;"  >
-                
-                    <a href="./details.html">
-                        <img id="image" src="hazrat.jpg" alt="">
-                    </a>
-                
-               
-            </div>
-            <div class=" col" style="float: left; width: 20%; padding: 10px;" >
-                <a href="./details.html">
-                    <img id="image" src="rashan2.jpg" alt="">
-                </a>
-
-            </div>
-            
-            <div class=" col" style="float: left; width: 20%; padding: 10px;" >
-                
-                    <a href="rashan2.jpg">
-                        <img id="image" src="download (8).jpg" alt="">
-                    </a>
-                
-            </div> 
-            </div>  -->
-
-                <table style="text-align: center; margin-left: 20px; margin-right: auto;">
-                    <tr>
-                        <td> 
-
-                             <!-- <div>
-                                    <img src="rashan2.jpg" alt="Avatar" class="image" style="width:100%">
-                                    <div class="middle">
-                                      <div class="text">John Doe</div>
-                                    </div>
-                                  </div>  -->
-                             <div>
-                                
-                                    <img id="image" src="rashan2.jpg" alt="">
-                                    <div>
-                                        <a href="#"></a>
-                                    </div>
-                               
-                            </div>
-
-                        </td>
-                        <td>
-                            <div>
-                                <a href="./details.html">
-                                    <img id="image" src="food.jpg" alt="">
-                                </a>
-                            </div>
-                        </td>
-                        <td>
-                            <div>
-                                <a href="./details.html">
-                                    <img id="image" src="hazrat.jpg" alt="">
-                                </a>
-                            </div>
-                        </td>
-                        <td>
-                            <div>
-                                <a href="./details.html">
-                                    <img id="image" src="rashan2.jpg" alt="">
-                                </a>
-                            </div>
-                        </td>
-                        <td>
-                            <div>
-                                <a href="./details.html">
-                                    <img id="image" src="download (8).jpg" alt="">
-                                </a>
-
-                            </div>
-                        </td>
-                    </tr>
-                </table> 
-
-    </section>
-
-    <footer style="background-color: rgb(41, 39, 39); padding: 80px; width: 100%; display: inline-flex;">
-
-        <p style="color: lightgray; font-size: 15px;">
-            Head Office,<br>
-            A-25, Bahadurabad Chowrangi Karachi, Pakistan <br><br>
-
-            <span style="color: lightgray;">
-                <img src="./icons8-phone-100.png" width="18px" height="18px"> UAN: 111-729-526
-                <span style="color: lightgray; padding-left: 20px;"> <img src="./icons8-globe-16.png" width="18px"
-                        height="18px"> (+0092-213) 4130786-90
-                </span></span> <br>
-            <span style="color: lightgray;">
-                <img src="./icons8-phone-100.png" width="18px" height="18px"> CELL: 92-311-1729526 </span> <br>
-            <span style="color: lightgray;">
-                <img src="./icons8-phone-100.png" width="18px" height="18px"> USA NO +1(716)941 7792 </span> <br>
-            <span style="color: lightgray;">
-                <img src="./icons8-phone-100.png" width="18px" height="18px"> UK NO (+44)115 970 6256 </span> <br>
-            <span style="color: lightgray;">
-                <img src="./multimedia.png" width="18px" height="18px"> info@saylaniwelfare.com </span> <br>
-
-
-
-
-
-
-
-        </p>
-        <div style="margin-left: 50px;">
-            <p style="color: white;"> Useful Links</p>
-            <div class="progress" style="height: 1px; width: 400px; margin-top: -10px;">
-                <div class="progress-bar" role="progressbar" style="width: 20%; background-color: green; "
-                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-        </div>
-        <div style="margin-left: 50px;">
-            <p style="color: white;"> Contact Us</p>
-            <span> <img src="./icons8-facebook-200.png" width="30px" height="30px" alt="" style="margin-top: -25px;">
-            </span>
-            <span> <img src="./icons8-twitter-circled-96.png" width="30px" height="30px" alt=""
-                    style="margin-top: -25px;"> </span>
-            <span> <img src="./icons8-youtube-squared-200.png" width="30px" height="30px" alt=""
-                    style="margin-top: -25px;"> </span>
-            <span> <img src="./instagram-round-3d-512.png" width="30px" height="30px" alt="" style="margin-top: -25px;">
-            </span>
-
-        </div>
-
-    </footer>
-
-    <footer id="copyright">
-
-        <h4 style="color: white; font-size: 12px; margin-top:2px;padding-left: 90px;">Copyright © 2020 Saylani Welfare
-        </h4>
-        <button>
-            <a href="./saylanihome.html"></a>
-            <img src="./kindpng_1209307.png" width="50px" height="50px"
-                style="position: fixed; right: 30px;bottom: 10px;">
-            </a>
+          <span class="navbar-toggler-icon"></span> <!-- when screen is small menu button-->
         </button>
-    </footer>
+
+        <div class="collapse navbar-collapse"></div> <!-- centre me aagya home buttons-->
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <!-- id same honi chahye data targer se wrna work nh krega-->
+          <ul class="nav mr-auto m-0">
+
+            <!-- template right side pe aagya-->
+            <li class="nav-item active">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./service.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact Us</a>
+            </li>
+            <!-- <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li> -->
+          </ul>
+          <form class="form-inline my-2 my-lg-0 ">
+            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+
+            <a href="./contact.html" button class="btn menu-right-btn border border-danger rounded-pill mb-2 mt-2" type="submit">
+              Book an appointment</button></a>
+          </form>
+
+      </nav>
+    </div>
+
+    <div class="container-fluid p-0 ">
+      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./pics/pexels-photo-457701.jpeg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <!-- <div class="d-flex flex-column"> -->
+              <div class="col-md-2 py-2  px-1 mb-5 ">
+                <h5  data-aos="fade-down">50% OFF </h5>
+              </div>
+              <p>Now You Can Enjoy 50% discount on our party makeups</p>
+
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="./pics/pexels-photo-2799605.jpeg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <div class="col-md-2 py-5 px-1 mb-5 ">
+                <h5></h5>
+              </div>
+
+              <!-- <h5>Second slide label</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./pics/pexels-photo-3331488.jpeg" class="d-block w-100 " alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <!-- <h5>Third slide label</h5> -->
+              <!-- <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="section-1 mt-5">
+      <div class="container text-center">
+        <!-- <h1>WELCOME TO OUR BEAUTY SALON</h1> -->
+
+        <div class="row">
+          <div class="card mb-3" >
+            <div class="row no-gutters">
+              <div class="col-md-6 col-sm-12">
+                <img src="./pics/pexels-photo-3065096.jpeg" class="card-img" alt="...">
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="card-body">
+                  <h5 class="card-title">Welcome To Our Beauty Salon</h5>
+                  <p class="card-text">
+                    Our team is extremely talented and passionate. They are also among the most highly trained and
+                    educated technicians in the industry. This ensures each and every one of our clients receives
+                    world-class service – each and every time. We want your experience to be unlike any other.
+                  </p>
+                  <button type="button" class="btn btn-outline-danger">Learn More </button>
+
+                  <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- <div class="section-2 mt-3">
+      <div class="container-fluid text-center">
+      <h2>OVER 30 YEARS OF SERVICE IN THE CITY OF KARACHI</h2>
+      </div>
+    </div> -->
+
+    <section>
+      <div class="section-22">
+        <div class="fixed-bg mt-4 mb-4">
+          <div class="card text-white m-0">
+            <div class="card-img-overlay ">
+              <div class="col-md-12 content-text-center text-center py-5 ">
+              <h1 class="card-title"  data-aos="fade-down">Book Your 
+                Appointments
+              </h1>
+              <p class="card-text text-center py-2 " data-aos="fade-down"> We make a discount only for those our customers who make an appointment,<br> so hurry up to make
+                an appointment with our specialists <br> to save up to 30%!</p>
+              <!-- <p class="card-text">Last updated 3 mins ago</p> -->
+              <button type="button"  data-aos="fade-up"class="btn btn-outline-danger">View More </button>
+
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      <!-- <div class="section-3 ">
+      <div class="container-fluid p-0">
+          <div class="d-flex justify-content-end "
+              <div class="d-flex flex-column md-4 col-sm-12 p-0"> 
+
+                <img src="./pics/pexels-photo-3738344.jpeg" class="image-fluid" alt=""> -->
+
+<!-- 
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                  </div>
+                </div> -->
+                   <!-- <h1 class="heading-1">Like & share ur love</h1> -->
+                  <!-- <p class="para">It is a long established fact that a reader will be distracted  </p>
+                  
+                  <input type="button" value="show" class="btn btn-danger">  -->
+              <!-- </div>
+          </div>
+      </div>
+</div> -->
+    
 
 
-    <!-- </div> -->
+<section>
+  <div class="section-4">
+    <!-- <div class="container-fluid ">
+<h1>hello</h1>
+    </div>   
+  </div> -->
+      <!-- <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div> -->
+    <!-- <img src="https://mdbootstrap.com/img/logo/mdb-transparent-250px.png" data-aos="flip-lef class="animated bounce infinite" alt="Transparent MDB Logo" id="animated-img1"> -->
+<!-- \</div>
+</section> -->
+<div class="card-columns py-2 m-5" >
+  <div class="card">
+    <img class="card-img-top" src="./pics/pexels-photo-3985360.jpeg" alt="Card image cap">
+    <div class="card-body">
+      <h2 class="card-title text-center">Spa Services</h2>
+      <p class="card-text text-center">Our skilled estheticians offer an array of refreshing treatments, leaving you feeling rejuvenated, restored, and relaxed.</p>
+      <a href="./service.html"><button type="button" class="btn btn-outline-danger">View Menu </button></a>
 
-    <!-- </div>
- -->
+    </div>
+  </div>
+  
+
+  <!-- <div class="div">
+    <div class="col-md-4">
+      <img class="card-img width" src="./pics/pexels-photo-3065096.jpeg" alt="Card image cap">
+
+    </div>
+  </div> -->
+  <div class="card">
+    <img class="card-img" src="./pics/pexels-photo-3912572.jpeg" alt="Card image">
+    <div class="card-img-overlay h-100 d-flex flex-column justify-content-end ">
+      <h2 class="card-titles">Make Up <br> Services</h2>
+
+      <p class="card-texts text-left">We offer a wide variety <br> of services,on personal <br> aesthetics.<br> Our practioners <br> are well-practiced.</p>
+     <a href="./service.html "><button  type="button" class="btn btn-outline-danger butt">View Menu </button></a> 
+
+  </div>   
+      </div>
+  <div class="card">
+    <img class="card-img-top" src="./pics/hair.jpeg" alt="Card image cap">
+    <div class="card-body">
+      <h2 class="card-title text-center">Hair Salon</h2>
+      <p class="card-text text-center"> 
+        If you want to change your style or just keep your haircut up to date here is the best place you're looking for
+        </p>
+       <a href="./service.html"><button  type="button" class="btn btn-outline-danger buttss">View Menu</button></a>
+
+  </div>
+  </div>
+  </div>
+  </main>
+  <footer>
+
+    <div class="container text-white">
+      <div class="section-last">
+
+          <div class="row">
+            <div class="col-md-4 py-5 m-0 justify-content-center">
+
+              <h1> About Us</h1>
+             
+              <p>
+                Shazz Salon is all about creating a new look and treating your imperfections beautifully to make you feel young, stylish and flawless. That is why a wide range of treatments is offered by the salon that includes Hair treatments, Skin treatments, Eye treatments and Hand and Feet treatments. Hair treatments include hair cut, low lights, coloring, and perming keratin treatment. All these services are exceptionally splendid and up to date that is sure to make your hair look exquisite and gorgeous.
+
+              </p>
+            </div>
+            <div class="col-md-4 py-5 justify-content-center">
+              <h1>Outlets</h1>
+            
+                <ul> Islamabad
+                  (11705 Medlock Bridge Rd Johns Creek, GA 30097)
+                </ul>
+                <ul>
+                Lahore(11705 Medlock Bridge Rd
+                Johns Creek, GA 30097)
+                </ul>
+                <ul>
+                  Karachi(Gulshan-e-Iqbal Bloack 7)
+                </ul>
+                <ul>
+                  Karachi(Gulistan-e-Jauhar Bloack 7)
+                </ul>
+
+              
+            </div>
+            <div class="col-md-4 py-5 text-center">
+              <div class="form justify-content-center "> 
+                <h1> E-NewsLetter Sign Up</h1>
+                <br>
+                <input type="text" name="name" placeholder="name" size="40" class="form-control">
+                <br>
+                <input type="text" name="email" placeholder="email" size="40" class="form-control">
+                 <br>
+                <input type="button" value="Contact Us" class="btn btn-danger py-2">
+                
+                
+        <div class="social" style="margin-top:5%">
+
+          <h3>Follow Us</h3>
+          <div class="d-flex flex-row justify-content-center">
+
+              <i class="fab fa-facebook m-2"></i>
+              <i class="fab fa-twitter m-2"></i>
+              <i class="fab fa-instagram m-2"></i>
+              <i class="fab fa-youtube m-2"></i>
+
+
+          </div>
+
+      </div> 
+            </div>
+            </div>
+            <hr>
+        <h3 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;">©Copyright 2020 – Shazz Salon and Spa. All Rights Reserved. &copy</h3>
+    </div>
+          </div>
+      </div>
+    </div>
+  
+        <!-- <hr>
+        <h5 style="color: teal; margin-top: 2%;">Daily Tution &copy</h5>
+    </div> -->
+        </footer>
+
+
+  <!-- <div class="section-2">
+  <div class="container">
+    <h2 class=" animate shake"> Save up to 30%</h2>
+    <img src="./pics/pexels-photo-1831234.jpeg" alt="" class="animate__animated animate__bounce">
+  </div>
+</div>
+
+</main> -->
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+
+    <script>
+      window.sr=ScrollReveal({duraion:1000});
+      sr.reveal('.section-1');
+      sr.reveal('.section-22');
+      sr.reveal('.section-4 .card-columns .card');
+      sr.reveal('.footer .section-last .container' );
+
+      // sr.reveal();
+  
+  </script>
+
+  <!-- <script src="./main.js"></script> -->
+
 
 </body>
 
-</html>
+</html
